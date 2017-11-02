@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToDoList from './ToDoList';
+import Now from './Now';
 
 class ToDoForm extends Component {
   constructor(props) {
@@ -18,9 +19,13 @@ class ToDoForm extends Component {
   }
 
   handleSubmit(event) {
-    alert('A to do list item was submitted: ' + this.state.value);
+    var newItemText = this.state.value;
+    alert('A to do list item was submitted: ' + newItemText);
     event.preventDefault();
-    this.setState({listItems: this.state.listItems.concat(this.state.value)});
+
+    this.setState({
+      listItems: this.state.listItems.concat({[newItemText]: Now()})
+    })
   }
 
   render() {
