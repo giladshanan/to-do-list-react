@@ -12,7 +12,7 @@ class ListItem extends Component {
   }
 
   handleInputChange(event) {
-    if (this.state.complete == false) {
+    if (this.state.complete === false) {
       this.refs.listli.style.setProperty("text-decoration", "line-through");
       this.setState({
         complete: true
@@ -92,7 +92,7 @@ class ToDoForm extends Component {
 
 function App(props) {
   return (
-    <div>
+    <div className="App">
       <h1>To Do List</h1>
       <ToDoForm />
     </div>
